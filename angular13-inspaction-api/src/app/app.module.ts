@@ -10,6 +10,7 @@ import { AddEditInspectionComponent } from './inspection/add-edit-inspection/add
   declarations: [
     AppComponent,
     InspectionComponent
+    InspectionComponent,
     ShowInspectionComponent,
     AddEditInspectionComponent
   ],
