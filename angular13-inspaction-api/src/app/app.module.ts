@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { InspectionComponent } from './inspection/inspection.component';
+import { ShowInspectionComponent } from './inspection/show-inspection/show-inspection.component';
 
 @NgModule({
   declarations: [
