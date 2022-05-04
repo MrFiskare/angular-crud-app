@@ -9,7 +9,6 @@ import { AddEditInspectionComponent } from './inspection/add-edit-inspection/add
 @NgModule({
   declarations: [
     AppComponent,
-    InspectionComponent
     InspectionComponent,
     ShowInspectionComponent,
     AddEditInspectionComponent
