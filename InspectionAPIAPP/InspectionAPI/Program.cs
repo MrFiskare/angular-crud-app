@@ -1,7 +1,7 @@
 using InspectionAPI.Data;
 using Microsoft.EntityFrameworkCore;
 
-var myAllowSpecificOptions = "_myAllowSpecificOrigins";
+var myAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,10 +20,10 @@ builder.Services.AddDbContext<DataContext>(options =>
 // Enable CORS
 builder.Services.AddCors(options => 
 {
-    options.AddPolicy(name: myAllowSpecificOptions,
+    options.AddPolicy(name: myAllowSpecificOrigins,
         builder =>
         {
-            builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyOrigin();
+            builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
         });
 });
 
@@ -39,7 +39,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors();
+app.UseCors(myAllowSpecificOrigins);
 
 app.UseAuthorization();
 
