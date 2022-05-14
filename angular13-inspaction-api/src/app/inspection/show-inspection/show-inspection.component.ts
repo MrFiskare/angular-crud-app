@@ -22,6 +22,7 @@ export class ShowInspectionComponent implements OnInit {
   {
     this.inspectionList$ = this.service.getInspectionList();
     this.inspectionTypesList$ = this.service.getInspectionTypesList();
+    this.refreshInspectionTypesMap();
   }
 
   refreshInspectionTypesMap(){
@@ -31,7 +32,7 @@ export class ShowInspectionComponent implements OnInit {
 
       for(let i = 0; i < data.length; i++)
       {
-        this.inspectionTypesMap.set(this.inspectionTypesList[i].id, this.inspectionTypesList[i].inspectionName);
+        this.inspectionTypesMap.set(this.inspectionTypesList[i].id, this.inspectionTypesList[i].name);
       }
     })
   }
