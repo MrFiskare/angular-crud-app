@@ -43,7 +43,14 @@ export class ShowInspectionComponent implements OnInit {
     this.activateAddEditInspectionComponent = true;
   }
 
-  refreshInspectionTypesMap(){
+  modalClose()
+  {
+    this.activateAddEditInspectionComponent = false;
+    this.inspectionList$ = this.service.getInspectionList();
+  }
+
+  refreshInspectionTypesMap()
+  {
     this.service.getInspectionTypesList().subscribe(data =>
       {
       this.inspectionTypesList = data;
@@ -54,5 +61,4 @@ export class ShowInspectionComponent implements OnInit {
       }
     })
   }
-
 }
