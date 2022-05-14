@@ -26,7 +26,7 @@ export class AddEditInspectionComponent implements OnInit {
     this.id = this.inspection.id;
     this.status = this.inspection.status;
     this.comments = this.inspection.comments;
-    this.inspectionTypeId = this.inspectionTypeId;
+    this.inspectionTypeId = this.inspection.inspectionTypeId;
     this.statusList$ = this.service.getStatusList();
     this.inspectionList$ = this.service.getInspectionList();
     this.inspectionTypesList$ = this.service.getInspectionTypesList();
