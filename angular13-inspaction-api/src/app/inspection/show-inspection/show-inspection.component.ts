@@ -18,8 +18,22 @@ export class ShowInspectionComponent implements OnInit {
 
   constructor(private service:InspectionApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     this.inspectionList$ = this.service.getInspectionList();
+    this.inspectionTypesList$ = this.service.getInspectionTypesList();
+  }
+
+  refreshInspectionTypesMap(){
+    this.service.getInspectionTypesList().subscribe(data =>
+      {
+      this.inspectionTypesList = data;
+
+      for(let i = 0; i < data.length; i++)
+      {
+        this.inspectionTypesMap.set(this.inspectionTypesList[i].id, this.inspectionTypesList[i].inspectionName);
+      }
+    })
   }
 
 }
